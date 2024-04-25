@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: #45474b;
+  --background: #fafafa;
+  --primary: #5755fe;
+  --secondary: #f08b93ff;
+  --accent: #ffefef;
+  --muted: #ee99c2;
+  --highlight: #ff71cd;
+}
+
+body {
+  color: rgb(var(--foreground));
+  background-color: var(--background);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.shimmer {
+  @apply bg-gray-300;
+}
+
+.menu-item {
+  @apply m-2 block cursor-pointer rounded-lg px-2 py-1.5 text-sm text-gray-700;
+}
+
+.linkify a {
+  @apply text-brand-500;
+  @apply hover:text-brand-600;
+}
+
+.linkify-button button {
+  @apply text-brand-500;
+  @apply hover:text-brand-600;
+}
+
+::-webkit-file-upload-button {
+  @apply mr-2 cursor-pointer rounded-l-xl border-0 px-3 py-2;
+  @apply bg-gray-200;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-spinner::-webkit-inner-spin-button,
+.no-spinner::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.page-center {
+  @apply flex h-[calc(100vh-65px)] items-center justify-center;
+}
+
+.label {
+  @apply mb-1 font-medium text-gray-800;
+}
+
+.dropdown-active {
+  @apply bg-gray-100;
+}
+
+.divider {
+  @apply border-b;
+}
+
+.ld-text-gray-500 {
+  @apply text-gray-500;
+}
+
+.text-md {
+  @apply !text-sm sm:!text-base;
+}
+
+.oembed-player,
+iframe {
+  @apply rounded-xl;
+}
+
+/** CSS overrides for plyr audio **/
+.plyr__progress__buffer {
+  @apply !bg-white;
+}
+
+.plyr--audio .plyr__controls {
+  @apply !bg-transparent !text-white;
+}
+
+.plyr--audio .plyr__control {
+  @apply hover:!bg-transparent;
+}
+
+.plyr--audio.plyr--full-ui input[type="range"] {
+  @apply !text-white;
+}
+
+div[data-lexical-editor="true"] {
+  @apply outline-none;
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+#typeahead-menu {
+  @apply z-20;
+}
+
+.rc-slider-rail {
+  @apply bg-black  !important;
+  @apply opacity-30;
+}
+
+.rc-slider-track {
+  @apply bg-black  !important;
+}
+
+.rc-slider-handle {
+  @apply border-black  !important;
+}
+
+.rc-slider-handle-dragging {
+  box-shadow: 0 0 0 5px rgb(139 92 246 / 0.3) !important;
+}
+
+/* Markup styles */
+.markup > p,
+ul {
+  @apply leading-6 sm:leading-[26px];
+  @apply [&:not(:last-child)]:mb-2;
+}
+
+.full-page-publication-markup > p,
+ul {
+  @apply text-[15px] sm:text-[17px];
+  @apply !leading-7 sm:leading-[26px];
+  @apply [&:not(:last-child)]:mb-3 sm:[&:not(:last-child)]:mb-4;
+}
+
+.lp-player {
+  @apply [&>div>div]:shadow-none;
+  @apply [&>div>div]:border;
+  @apply [&>div>div]:border-gray-100;
+}
+
+.livepeer-aspect-ratio-container {
+  @apply [&>div>img]:object-contain;
+}
+
+/* react-virtuoso - Virtual profile list */
+.virtual-profile-list {
+  @apply !h-[80vh];
+  @apply [&>div>div]:divide-y;
+}
+
+.virtual-divider-list-window {
+  @apply [&>div>div]:divide-y;
+}
+
+/* react-virtuoso - Virtual notifications list */
+.virtual-notification-list {
+  @apply [&>div>div]:divide-y;
+}
+
+.pride-text {
+  background: linear-gradient(
+    to right,
+    #dc2626,
+    #ea580c,
+    #ca8a04,
+    #16a34a,
+    #2563eb,
+    #4f46e5,
+    #7c3aed
+  );
+  @apply bg-clip-text text-transparent;
+}
+
+.horizontal-loader > div {
+  background: linear-gradient(
+    5deg,
+    #dc2626,
+    #ea580c,
+    #ca8a04,
+    #16a34a,
+    #2563eb,
+    #4f46e5,
+    #7c3aed
+  );
+  width: 100%;
+  height: 5px;
+  @apply rounded-tl-xl rounded-tr-xl;
+  animation: gradient 4s linear infinite;
+  background-size: 250% 100%;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
+
+@keyframes pulse {
+  50% {
+    background-position: 0% !important;
+  }
+}
+
+.profile-bg {
+  background-color: #fafafa;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%2345474b' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
