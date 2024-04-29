@@ -148,4 +148,6 @@ const SignInCard: React.FC<{
             </div>
         </Modal>
     );
-};
+}; 
+
+export default SignInCard;
