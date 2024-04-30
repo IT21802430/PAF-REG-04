@@ -1,0 +1,12 @@
+{
+  "name": "paf-reg-04",
+  "version": "1.0.0",
+  "description": "Install these modules. \r npm i \r npm i tailwind-merge \r npm install --save clsx \r npm install @headlessui/react\r npm install @heroicons/react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
