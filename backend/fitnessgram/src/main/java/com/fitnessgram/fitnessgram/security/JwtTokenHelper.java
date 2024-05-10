@@ -1,9 +1,10 @@
 package com.fitnessgram.fitnessgram.security;
 
-import java.sql.Date;
+//import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
+import java.util.Date;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
