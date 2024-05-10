@@ -6,14 +6,23 @@ import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+//import org.hibernate.engine.jdbc.*;
 
 import com.fitnessgram.fitnessgram.config.AppConstants;
+import com.fitnessgram.fitnessgram.payloads.ApiResponse;
+import com.fitnessgram.fitnessgram.payloads.PostDto;
+import com.fitnessgram.fitnessgram.payloads.PostResponse;
+import com.fitnessgram.fitnessgram.services.FileService;
+import com.fitnessgram.fitnessgram.services.PostService;
 
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletResponse;
 
 @RestController
 @RequestMapping("/api/v1/")

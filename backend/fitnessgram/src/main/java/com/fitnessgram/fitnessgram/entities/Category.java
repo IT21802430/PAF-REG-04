@@ -3,7 +3,7 @@ package com.fitnessgram.fitnessgram.entities;
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

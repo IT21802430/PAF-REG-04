@@ -7,7 +7,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import jakarta.validation.Valid;
+import com.fitnessgram.fitnessgram.payloads.ApiResponse;
+import com.fitnessgram.fitnessgram.payloads.CategoryDto;
+import com.fitnessgram.fitnessgram.services.CategoryService;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/v1/categories")
@@ -19,7 +23,7 @@ public class CategoryController {
 	// create
 
 	@PostMapping("/")
-	public ResponseEntity<CategoryDto> createCategory(@Valid @RequestBody CategoryDto cateogDto) {
+	public ResponseEntity<CategoryDto> createCategory(@javax.validation.Valid @RequestBody CategoryDto cateogDto) {
 		CategoryDto createCategory = this.categoryService.createCategory(cateogDto);
 		return new ResponseEntity<CategoryDto>(createCategory, HttpStatus.CREATED);
 	}

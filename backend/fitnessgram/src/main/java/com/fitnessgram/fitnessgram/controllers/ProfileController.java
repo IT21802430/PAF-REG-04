@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fitnessgram.fitnessgram.payloads.ProfileDto;
+import com.fitnessgram.fitnessgram.services.ProfileService;
+
 @RestController
 @RequestMapping("/api/v1/")
 public class ProfileController {

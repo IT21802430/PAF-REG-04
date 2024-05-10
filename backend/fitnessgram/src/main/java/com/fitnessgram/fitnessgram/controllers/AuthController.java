@@ -2,6 +2,7 @@ package com.fitnessgram.fitnessgram.controllers;
 
 import java.security.Principal;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,14 +17,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import jakarta.validation.Valid;
+import com.fitnessgram.fitnessgram.entities.User;
+import com.fitnessgram.fitnessgram.exceptions.ApiException;
+import com.fitnessgram.fitnessgram.payloads.JwtAuthRequest;
+import com.fitnessgram.fitnessgram.payloads.JwtAuthResponse;
+import com.fitnessgram.fitnessgram.payloads.UserDto;
+import com.fitnessgram.fitnessgram.security.JwtTokenHelper;
+import com.fitnessgram.fitnessgram.services.UserService;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/v1/auth/")
 public class AuthController {
     
 	@Autowired
-	private jwtTokenHelper jwtTokenHelper;
+	private JwtTokenHelper jwtTokenHelper;
 
 	@Autowired
 	private UserDetailsService userDetailsService;
